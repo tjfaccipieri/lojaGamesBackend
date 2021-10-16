@@ -33,6 +33,7 @@ public class Produto {
 	@NotNull(message = "O Atributo Console não pode ser Nulo!")
 	private String console;
 
+	@PositiveOrZero
 	private int quantidade;
 
 	@NotNull(message = "O Atributo Preço não pode ser Nulo!")

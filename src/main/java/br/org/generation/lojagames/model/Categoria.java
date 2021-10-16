@@ -24,6 +24,9 @@ public class Categoria {
 
 	@NotNull(message = "O Atributo tipo não pode ser Nulo!")
 	private String tipo;
+	
+	@NotNull(message = "Foto obrigatória - será usada como icone")
+	private String foto;
 
 	/**
 	 * Atributo numeroProdutos (Não esquecer de Gerar Get e Set)
@@ -36,7 +39,7 @@ public class Categoria {
 	@Transient
 	private int numeroProdutos;
 
-	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
 
@@ -54,6 +57,14 @@ public class Categoria {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public int getNumeroProdutos() {
