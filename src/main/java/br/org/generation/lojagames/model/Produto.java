@@ -33,6 +33,9 @@ public class Produto {
 	@NotNull(message = "O Atributo Console não pode ser Nulo!")
 	private String console;
 
+	@NotNull
+	private String foto;
+
 	@PositiveOrZero
 	private int quantidade;
 
@@ -84,6 +87,14 @@ public class Produto {
 
 	public void setConsole(String console) {
 		this.console = console;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public int getQuantidade() {
