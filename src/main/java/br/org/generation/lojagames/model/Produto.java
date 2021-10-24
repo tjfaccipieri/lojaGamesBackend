@@ -30,8 +30,8 @@ public class Produto {
 	@Size(min = 5, max = 500, message = "O Atributo descrição deve ter no mínino 5 ne no máximo 500 caracteres")
 	private String descricao;
 
-	@NotNull(message = "O Atributo Console não pode ser Nulo!")
-	private String console;
+	@NotNull(message = "O Atributo tipo não pode ser Nulo!")
+	private String tipo;
 
 	@NotNull
 	private String foto;
@@ -81,12 +81,12 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
-	public String getConsole() {
-		return console;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setConsole(String console) {
-		this.console = console;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public String getFoto() {
