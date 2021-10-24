@@ -27,7 +27,7 @@ public class Produto {
 	private String nome;
 
 	@NotNull(message = "O AtributoDescrição não pode ser Nulo!")
-	@Size(min = 5, max = 500, message = "O Atributo descrição deve ter no mínino 5 ne no máximo 500 caracteres")
+	@Size(min = 5, max = 1500, message = "O Atributo descrição deve ter no mínino 5 ne no máximo 500 caracteres")
 	private String descricao;
 
 	@NotNull(message = "O Atributo tipo não pode ser Nulo!")
