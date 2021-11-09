@@ -1,6 +1,7 @@
 package br.org.generation.lojagames.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -27,7 +29,7 @@ public class Produto {
 	private String nome;
 
 	@NotNull(message = "O AtributoDescrição não pode ser Nulo!")
-	@Size(min = 5, max = 1500, message = "O Atributo descrição deve ter no mínino 5 ne no máximo 500 caracteres")
+	@Size(min = 5, max = 5000, message = "O Atributo descrição deve ter no mínino 5 ne no máximo 500 caracteres")
 	private String descricao;
 
 	@NotNull(message = "O Atributo tipo não pode ser Nulo!")
@@ -35,6 +37,16 @@ public class Produto {
 
 	@NotNull
 	private String foto;
+	
+	@NotNull
+	private String publisher;
+	
+	@NotNull
+	private String estilo;
+	
+	@Column(name = "data_lancamento")
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dataLancamento;
 
 	@PositiveOrZero
 	private int quantidade;
@@ -136,5 +148,31 @@ public class Produto {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public LocalDate getDataLancamento() {
+		return dataLancamento;
+	}
+
+	public void setDataLancamento(LocalDate dataLancamento) {
+		this.dataLancamento = dataLancamento;
+	}
+
+	public String getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(String estilo) {
+		this.estilo = estilo;
+	}
+	
+	
 
 }
