@@ -38,10 +38,8 @@ public class Produto {
 	@NotNull
 	private String foto;
 	
-	@NotNull
 	private String publisher;
 	
-	@NotNull
 	private String estilo;
 	
 	@Column(name = "data_lancamento")
